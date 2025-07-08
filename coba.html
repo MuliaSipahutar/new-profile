@@ -9,6 +9,105 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Typewriter */
+      .typewriter {
+        overflow: hidden;
+        border-right: 0.15em solid pink;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: 0.1em;
+        animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: pink;
+        }
+      }
+
+      /* Popup */
+      .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(15, 15, 15, 0.9);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+      }
+
+      .popup-content {
+        background: #1a1a1a;
+        padding: 2rem;
+        border-radius: 20px;
+        max-width: 500px;
+        text-align: center;
+        color: #fff;
+        box-shadow: 0 0 15px rgba(255, 192, 203, 0.4);
+      }
+
+      .popup-content h3 {
+        color: #ffb6c1;
+        margin-bottom: 1rem;
+      }
+
+      .popup-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .popup-close {
+        margin-top: 1.5rem;
+        background: #ff6ec4;
+        border: none;
+        padding: 0.7rem 1.5rem;
+        border-radius: 25px;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      #timer {
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        color: #f2c2da;
+        animation: fadeInUp 3s ease;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+
     <style>
       body {
         margin: 0;
@@ -18,7 +117,7 @@
       }
 
       header {
-        background: linear-gradient(135deg, #ffc107, #ff9800);
+        background: linear-gradient(135deg, #07ff7f, #ff9800);
         color: white;
         padding: 40px 20px;
         text-align: center;
@@ -82,7 +181,7 @@
         display: inline-block;
         margin: 8px 8px 0 0;
         padding: 10px 20px;
-        background-color: #ff9800;
+        background-color: #88652f;
         color: white;
         text-decoration: none;
         border-radius: 25px;
@@ -116,6 +215,19 @@
         background-color: #fafafa;
         margin-top: 40px;
       }
+
+      /* Style Lirik Diketik */
+      #lirik-typewriter-box {
+        margin-top: 2px;
+        color: #fff8e1;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-align: right; /* arahkan teks ke kanan */
+        line-height: 0.5;
+      }
+
+      /* Style Lirik Diketik */
     </style>
   </head>
   <body>
@@ -125,15 +237,22 @@
         alt="Mulia Risky Sipahutar"
         class="profile-img"
       />
+      <!-- Lirik Diketik -->
+      <div id="lirik-typewriter-box">
+        <p id="lirik-typewriter">
+          <!-- Lirik Diketik -->
+        </p>
+      </div>
+
       <h1>Mulia Risky Sipahutar</h1>
       <!-- Audio tersembunyi -->
       <audio id="lagu" loop>
-        <source src="putri_ariani_mimpi.mp3" type="audio/mpeg" />
+        <source src="manusiakuat.mp3" type="audio/mpeg" />
       </audio>
       <button
         id="musik-btn"
         style="
-          background-color: #ff9800;
+          background-color: #89704b;
           border: none;
           color: white;
           padding: 12px 20px;
@@ -228,7 +347,6 @@
           <div class="skill-tag">Adaptasi Cepat</div>
         </div>
       </div>
-
       <div class="section">
         <h2>Sertifikasi</h2>
         <div class="info-box">
@@ -240,6 +358,55 @@
         </div>
       </div>
     </div>
+
+    <!-- Script Lirik Lagu -->
+    <script>
+      const typewriterLirik = [
+        { time: 0, text: "🌟 Manusia kuat itu kamu..." },
+        { time: 5, text: "Yang tak pernah lelah melangkah..." },
+        { time: 10, text: "Di tengah badai dan air mata." },
+        { time: 15, text: "Kamu tetap tegar, kamu tetap hebat." },
+        { time: 20, text: "🌈 Teruskan langkahmu, ini belum akhir." },
+        { time: 27, text: "Hidup ini adalah panggung keberanian." },
+      ];
+
+      const lirikBox = document.getElementById("lirik-typewriter");
+      const audio = document.getElementById("lagu");
+
+      let lastTime = 0;
+      let currentIndex = -1;
+      let typing = false;
+
+      function ketikTeks(teks, elemen, kecepatan = 50) {
+        let i = 0;
+        typing = true;
+        elemen.innerHTML = "";
+        const ketik = setInterval(() => {
+          elemen.innerHTML += teks.charAt(i);
+          i++;
+          if (i >= teks.length) {
+            clearInterval(ketik);
+            typing = false;
+          }
+        }, kecepatan);
+      }
+
+      audio.addEventListener("timeupdate", () => {
+        const currentTime = audio.currentTime;
+        for (let i = 0; i < typewriterLirik.length; i++) {
+          if (
+            currentTime >= typewriterLirik[i].time &&
+            currentIndex !== i &&
+            !typing
+          ) {
+            currentIndex = i;
+            ketikTeks(typewriterLirik[i].text, lirikBox);
+          }
+        }
+      });
+    </script>
+
+    <!-- Sricpt Lirik Lagu -->
 
     <script>
       const lagu = document.getElementById("lagu");

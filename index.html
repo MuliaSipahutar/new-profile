@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mulia Risky Sipahutar - CV Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+      /* Typewriter */
+      .typewriter {
+        overflow: hidden;
+        border-right: 0.15em solid pink;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: 0.1em;
+        animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: pink;
+        }
+      }
+
+      /* Popup */
+      .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(15, 15, 15, 0.9);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+      }
+
+      .popup-content {
+        background: #1a1a1a;
+        padding: 2rem;
+        border-radius: 20px;
+        max-width: 500px;
+        text-align: center;
+        color: #fff;
+        box-shadow: 0 0 15px rgba(255, 192, 203, 0.4);
+      }
+
+      .popup-content h3 {
+        color: #ffb6c1;
+        margin-bottom: 1rem;
+      }
+
+      .popup-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .popup-close {
+        margin-top: 1.5rem;
+        background: #ff6ec4;
+        border: none;
+        padding: 0.7rem 1.5rem;
+        border-radius: 25px;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      #timer {
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        color: #f2c2da;
+        animation: fadeInUp 3s ease;
+      }
+
+      @keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    </style>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: #f4f6f8;
+        color: #333;
+      }
+
+      header {
+        background: linear-gradient(135deg, #62cae7, hsl(206, 9%, 31%));
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 10px 0;
+        font-size: 2.5rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      .profile-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-img {
+  width: 150px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  /* Membuat bingkai gradasi */
+  padding: 4px;
+  background: linear-gradient(135deg, #d1a317, #5a7b94);
+  border: none;
+
+  /* Gunakan background luar + box dalam */
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Inner image dikelilingi gradasi */
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+  background-color: #1e1e1e; /* fallback jika gambar gagal */
+}
+
+/* Hover effect */
+.profile-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(52, 84, 200, 0.3);
+}
+
+
+      .section {
+        margin-top: 40px;
+      }
+
+      .section h2 {
+        color: #1d2628;
+        margin-bottom: 16px;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 5px;
+      }
+
+      .info-box {
+        margin-bottom: 20px;
+        background: #fff;
+        padding: 16px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .info-box h3 {
+        margin-top: 0;
+        color: #6d6666;
+      }
+
+      .contact-buttons a {
+        display: inline-block;
+        margin: 8px 8px 0 0;
+        padding: 10px 20px;
+        background-color: #07b5e5;
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: bold;
+        transition: background-color 0.4s ease;
+      }
+
+      .contact-buttons a:hover {
+        background-color: #000000;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill-tag {
+        background: #07efad;
+        color: #000000;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-weight: 500;
+        font-size: 15px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+        background-color: #ffffff;
+        margin-top: 40px;
+      }
+
+
+      /* coba */
+
+      .lirik-drop {
+  position: absolute;
+  left: 50%; /* posisi dari sisi kiri */
+  transform: translateX(-50%); /* geser ke kiri agar betul-betul di tengah */
+  font-size: 1rem;
+  color: #fff4e6;
+  font-weight: bold;
+  animation: jatuh 4s linear forwards;
+  white-space: nowrap;
+  text-shadow: 1px 1px 5px #ff9800;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+@keyframes jatuh {
+  0% {
+    top: 0;
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    top: 50vh;
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="picture.png"
+        alt="Mulia Risky Sipahutar"
+        class="profile-img"
+      />
+      <div id="lirik-rain-container"></div>
+  <p id="lirik-samping">
+
+      <h1>Mulia Risky Sipahutar</h1>
+      <!-- Audio tersembunyi -->
+      <audio id="lagu" loop>
+        <source src="manusiakuat.mp3" type="audio/mpeg" />
+      </audio>
+      <button
+        id="musik-btn"
+        style="
+          background-color: #17679c;
+          border: none;
+          color: white;
+          padding: 12px 20px;
+          border-radius: 25px;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          transition: background 0.3s ease;
+        "
+      >
+        🔊 Putar Musik
+      </button>
+      <p>
+        Lulusan S1 Hukum | Pengalaman Administrasi & Retail | Adaptif & Siap
+        Belajar
+      </p>
+      <div class="contact-buttons">
+        <a href="mailto:mr.sipahutar21@gmail.com">📧 Email</a>
+        <a href="tel:+6281258659076">📞 Telepon</a>
+        <a
+          href="https://www.linkedin.com/in/mulia-risky-sipahutar-029283223"
+          target="_blank"
+          >🔗 LinkedIn</a
+        >
+      </div>
+    </header>
+</div>
+
+      </div>
+
+    <div class="container">
+      <div class="section">
+        <h2>Profil Singkat</h2>
+        <div class="info-box">
+          <p>
+            Saya merupakan lulusan Sarjana Ilmu Hukum dari Universitas
+            Pattimura, dengan latar belakang pengalaman di bidang administrasi
+            dan retail. Terampil dalam mengoperasikan Microsoft Office, serta
+            memiliki semangat belajar yang tinggi dan kemampuan adaptasi yang
+            baik di lingkungan kerja yang dinamis. Saya selalu berkomitmen untuk
+            memberikan kinerja terbaik dan terus berkembang secara profesional.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Pengalaman Kerja</h2>
+
+        <div class="info-box">
+          <h3>PT Daya Indah Yasa (MR.DIY) – Store Boy / Stock Room</h3>
+          <p><strong>Oktober 2024 – Agustu 2025</strong></p>
+          <ul>
+            <li>
+              Mengelola lebih dari 200 karton barang per pengiriman dengan
+              efisiensi tinggi.
+            </li>
+            <li>Melakukan scan barang & verifikasi dengan alat QTA/PDT.</li>
+            <li>Menggunakan Excel untuk update dan pencocokan stok.</li>
+          </ul>
+        </div>
+
+        <div class="info-box">
+          <h3>PT Pegadaian – Sales & Marketing</h3>
+          <p><strong>Oktober 2023 – Februari 2024</strong></p>
+          <ul>
+            <li>Melakukan canvassing dan promosi produk ke masyarakat.</li>
+            <li>Menjangkau calon nasabah baru dan bantu proses transaksi.</li>
+          </ul>
+        </div>
+
+        <div class="info-box">
+          <h3>Kantor Hukum – Staf Administrasi</h3>
+          <p><strong>Agustus 2023 – Oktober 2023</strong></p>
+          <ul>
+            <li>
+              Mengelola jadwal sidang, menyusun dokumen hukum & surat kuasa.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Keterampilan</h2>
+        <div class="skills">
+          <div class="skill-tag">Microsoft Excel (8/10)</div>
+          <div class="skill-tag">Microsoft Word (8/10)</div>
+          <div class="skill-tag">PowerPoint</div>
+          <div class="skill-tag">HTML, CSS, JavaScript</div>
+          <div class="skill-tag">Data Entry</div>
+          <div class="skill-tag">Customer Service</div>
+          <div class="skill-tag">Legal Drafting Dasar</div>
+          <div class="skill-tag">Teamwork</div>
+          <div class="skill-tag">Komunikasi Efektif</div>
+          <div class="skill-tag">Adaptasi Cepat</div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Sertifikasi</h2>
+        <div class="info-box">
+          <ul>
+            <li>Microsoft Office untuk Pegawai Perkantoran – Skill Academy</li>
+            <li>Menyusun Laporan Keuangan – Skill Academy</li>
+            <li>Teknik Penanganan & Pengiriman Barang</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    
+   <script>
+  const lirikRain = [
+    { time: 0, text: "kau bisa patahkan kakiku" },
+    { time: 4, text: "Tapi tidak mimpi-mimpiku" },
+    { time: 8, text: "kau bisa lumpuhkan tanganku" },
+    { time: 13, text: "tapi tidak mimpi-mimpiku" },
+    { time: 17, text: "kau bisa merebut senyumku" },
+    { time: 21, text: "tapi sungguh tak akan lama" },
+    { time: 25, text: "kau bisa merobek hatiku" },
+    { time: 30, text: "tapi aku tau obatnya" },
+    { time: 36, text: "Manusia-manusia kuat" },
+    { time: 38, text: "itu kita" },
+    { time: 40, text: "jiwa-jiwa yang kuat" },
+    { time: 43, text: "itu kita" },
+    { time: 44, text: "Manusia-manusia kuat" },
+    { time: 47, text: "itu kita" },
+    { time: 49, text: "jiwa-jiwa yang kuat" },
+    { time: 52, text: "itu kita" },
+    { time: 53, text: "kau bisa hitamkan putihku" },
+    { time: 58, text: "kau takkan gelapkan apapun" },
+    { time: 62, text: "kau bisa runtuhkan jalanku" },
+    { time: 67, text: "kan kutemukan jalan yang lain" },
+    { time: 70, text: "Manusia-manusia kuat" },
+    { time: 73, text: "itu kita" },
+    { time: 75, text: "jiwa-jiwa yang kuat" },
+    { time: 77, text: "itu kita" },
+    { time: 79, text: "Manusia-manusia kuat" },
+    { time: 81, text: "itu kita" },
+    { time: 83, text: "jiwa-jiwa yang kuat" },
+    { time: 85, text: "itu kita" },
+    { time: 91, text: "bila bukan" },
+    { time: 93, text: "kehendaknya" },
+    { time: 100, text: "tidak satu pun culasmu" },
+    { time: 104, text: "akan bawa" },
+    { time: 107, text: "bahaya" },
+    { time: 126, text: "Manusia-manusia kuat" },
+    { time: 128, text: "itu kita" },
+    { time: 130, text: "jiwa-jiwa yang kuat" },
+    { time: 133, text: "itu kita" },
+    { time: 135, text: "Manusia-manusia kuat" },
+    { time: 137, text: "itu kita" },
+    { time: 139, text: "jiwa-jiwa yang kuat" },
+    { time: 142, text: "itu kita" },
+    { time: 143, text: "Manusia-manusia kuat" },
+    { time: 146, text: "itu kita" },
+    { time: 148, text: "jiwa-jiwa yang kuat" },
+    { time: 150, text: "itu kita" },
+    { time: 152, text: "Manusia-manusia kuat" },
+    { time: 154, text: "itu kita" },
+    { time: 156, text: "jiwa-jiwa yang kuat" },
+    { time: 159, text: "itu kita" },
+    { time: 161, text: "kau bisa patahkan kakiku" },
+    { time: 166, text: "patah tanganku rebut senyumku" },
+    { time: 170, text: "hitamkan putihnya hatiku" },
+    { time: 174, text: "tapi tidak mimpi-mimpiku" }
+  ];
+
+  const container = document.getElementById("lirik-rain-container");
+  const audio = document.getElementById("lagu");
+
+  // Loop audio
+  audio.loop = true;
+
+  audio.addEventListener("timeupdate", () => {
+    const now = audio.currentTime;
+    for (let i = 0; i < lirikRain.length; i++) {
+      if (now >= lirikRain[i].time && !lirikRain[i].played) {
+        buatLirikJatuh(lirikRain[i].text);
+        lirikRain[i].played = true;
+      }
+    }
+  });
+
+  // Reset played status saat audio mulai dari awal lagi
+  audio.addEventListener("seeked", () => {
+    if (audio.currentTime < 1) {
+      for (let i = 0; i < lirikRain.length; i++) {
+        lirikRain[i].played = false;
+      }
+    }
+  });
+
+  function buatLirikJatuh(teks) {
+    const span = document.createElement("span");
+    span.className = "lirik-drop";
+    span.style.left = `${Math.random() * 80}%`;
+    span.textContent = teks;
+    container.appendChild(span);
+
+    setTimeout(() => {
+      span.remove();
+    }, 4000);
+  }
+</script>
+
+
+    <script>
+      const lagu = document.getElementById("lagu");
+      const tombol = document.getElementById("musik-btn");
+      let sedangMain = false;
+
+      tombol.addEventListener("click", () => {
+        if (!sedangMain) {
+          lagu.play();
+          tombol.innerText = "⏸️ Pause Musik";
+          sedangMain = true;
+        } else {
+          lagu.pause();
+          tombol.innerText = "🔊 Putar Musik";
+          sedangMain = false;
+        }
+      });
+    </script>
+
+    <footer>&copy; 2025 Mulia Risky Sipahutar. All rights reserved.</footer>
+  </body>
+</html>
